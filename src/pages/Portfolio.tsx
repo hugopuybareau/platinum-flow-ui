@@ -14,7 +14,16 @@ const allocationData = [
   { name: 'Stocks', value: 105000, color: 'hsl(var(--primary))' },
   { name: 'ETFs', value: 18000, color: 'hsl(var(--secondary))' },
   { name: 'Crypto', value: 12000, color: 'hsl(var(--accent))' },
-  { name: 'Cash', value: 5000, color: 'hsl(var(--muted))' },
+  { name: 'Cash', value: 5000, color: 'hsl(var(--muted-foreground))' },
+]
+
+const chartColors = [
+  'hsl(var(--primary))',
+  'hsl(var(--secondary))', 
+  'hsl(var(--accent))',
+  'hsl(var(--muted-foreground))',
+  'hsl(var(--primary) / 0.7)',
+  'hsl(var(--secondary) / 0.7)',
 ]
 
 const performanceData = [
@@ -133,8 +142,14 @@ export default function Portfolio() {
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
-                      <Tooltip 
+                       <Tooltip 
                         formatter={(value: number) => [`$${value.toLocaleString()}`, 'Value']}
+                        contentStyle={{
+                          backgroundColor: 'hsl(var(--card))',
+                          border: '1px solid hsl(var(--border))',
+                          borderRadius: '8px',
+                          color: 'hsl(var(--card-foreground))',
+                        }}
                       />
                     </PieChart>
                   </ResponsiveContainer>
@@ -170,12 +185,13 @@ export default function Portfolio() {
                         tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
                       />
                       <YAxis hide />
-                      <Tooltip 
+                       <Tooltip 
                         formatter={(value: number) => [`$${value.toLocaleString()}`, 'Portfolio Value']}
                         contentStyle={{
                           backgroundColor: 'hsl(var(--card))',
                           border: '1px solid hsl(var(--border))',
                           borderRadius: '8px',
+                          color: 'hsl(var(--card-foreground))',
                         }}
                       />
                       <Bar 
