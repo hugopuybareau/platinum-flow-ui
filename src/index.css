@@ -113,13 +113,23 @@
   }
   
   .btn-primary {
-    @apply btn-platine bg-primary text-primary-foreground shadow-sharp
-           hover:bg-primary/90 hover:shadow-elevation;
+    @apply btn-platine bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-sharp);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary/90;
+    box-shadow: var(--shadow-elevation);
   }
   
   .btn-secondary {
-    @apply btn-platine bg-secondary text-secondary-foreground shadow-sharp
-           hover:bg-secondary/80 hover:shadow-elevation;
+    @apply btn-platine bg-secondary text-secondary-foreground;
+    box-shadow: var(--shadow-sharp);
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-secondary/80;
+    box-shadow: var(--shadow-elevation);
   }
   
   .btn-ghost {
@@ -133,7 +143,8 @@
   
   /* Card Styles */
   .card-platine {
-    @apply bg-card text-card-foreground shadow-sharp border border-border;
+    @apply bg-card text-card-foreground border border-border;
+    box-shadow: var(--shadow-sharp);
   }
   
   /* Text Hierarchy - Scarce & Elegant */
@@ -220,15 +231,5 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }
