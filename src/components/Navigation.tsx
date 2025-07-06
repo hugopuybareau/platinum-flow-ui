@@ -20,7 +20,7 @@ export function Navigation() {
   }
 
   const navLinks = [
-    { href: '/features', label: 'Features' },
+    { href: '/chat', label: 'Agent Chat' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/alerts', label: 'Alerts' },
     { href: '/contact', label: 'Contact' },
