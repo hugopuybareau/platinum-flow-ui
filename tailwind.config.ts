@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -51,17 +54,12 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-platinum': 'var(--gradient-platinum)',
+				'gradient-depth': 'var(--gradient-depth)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +82,56 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { 
+						transform: 'translateY(0px) translateX(0px)', 
+						opacity: '0.8'
+					},
+					'25%': { 
+						transform: 'translateY(-10px) translateX(5px)', 
+						opacity: '0.9'
+					},
+					'50%': { 
+						transform: 'translateY(-5px) translateX(-8px)', 
+						opacity: '0.7'
+					},
+					'75%': { 
+						transform: 'translateY(-15px) translateX(3px)', 
+						opacity: '0.9'
+					}
+				},
+				'slide-diagonal': {
+					'0%': { 
+						transform: 'translateX(-100px) translateY(50px)', 
+						opacity: '0.6'
+					},
+					'50%': { 
+						transform: 'translateX(20px) translateY(-20px)', 
+						opacity: '0.8'
+					},
+					'100%': { 
+						transform: 'translateX(100px) translateY(-50px)', 
+						opacity: '0.6'
+					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 15s ease-in-out infinite',
+				'slide-diagonal': 'slide-diagonal 20s linear infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out forwards'
 			}
 		}
 	},
